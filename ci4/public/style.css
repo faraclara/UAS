@@ -32,7 +32,7 @@ header h1 {
 
 /* navigasi */
 nav {
-    background-color: #9b1919;
+    background-color: #FF8C00;
     height:50px;
     line-height:50px;
     position:relative;
@@ -51,7 +51,7 @@ nav ul li a {
 }
 nav ul li a.active,
 nav ul li a:hover {
-    background-color: #9b1919;
+    background-color: rgb(255,69,0);
     display:block;
 }
 
@@ -62,7 +62,7 @@ nav ul .sub1 {
     position:absolute;
     left:300px;
     top:50px;
-    background-color:#9b1919;
+    background-color: #FF8C00;
 }
 .sub1 a:hover { color:#fff }
 
@@ -102,7 +102,7 @@ h1{
 button[type=submit]{
     padding: 7px;
     color: rgb(255, 255, 255);
-    background-color:  rgb(136, 15, 15);
+    background-color:  rgb(255,69,0);
     box-sizing: border-box;
     font-size: 15px;
     border-radius: 4px;
@@ -128,7 +128,7 @@ table td{
     padding: 10px 8px;
 }
 table th {
-    background:#9b1919;
+    background: 	#FF8C00;
     color:#ffffff;
     font-size: 17px;
     text-align: left;

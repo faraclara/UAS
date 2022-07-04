@@ -8,6 +8,7 @@
     <p><textarea name="alamat" cols="10" rows="10" placeholder="Alamat"></textarea></p>
     <p><input type="text" name="no_rumah" placeholder="Nomor Rumah"></p>
     <p><input type="submit" value="Tambah" class="btn btn-large"></p>
+    <p><input type="text" name="status" placeholder="status"></p>
     <a href="<?= base_url('/admin/data_warga');?>" class="btn btn-back">Batal</a>
 </form>
 

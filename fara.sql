@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Jul 2022 pada 20.26
--- Versi server: 10.4.21-MariaDB
--- Versi PHP: 8.0.12
+-- Waktu pembuatan: 04 Jul 2022 pada 10.00
+-- Versi server: 10.4.22-MariaDB
+-- Versi PHP: 7.4.27
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,11 +28,11 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `iuran` (
-  `id` int(11) NOT NULL,
-  `keterangan` varchar(180) NOT NULL,
-  `tanggal` varchar(15) NOT NULL,
-  `bulan` int(2) NOT NULL,
-  `tahun` int(4) NOT NULL,
+  `id` int(100) NOT NULL,
+  `keterangan` varchar(250) NOT NULL,
+  `tanggal` int(35) NOT NULL,
+  `bulan` varchar(15) NOT NULL,
+  `tahun` int(50) NOT NULL,
   `jumlah` int(50) NOT NULL,
   `warga_id` int(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -42,8 +42,8 @@ CREATE TABLE `iuran` (
 --
 
 INSERT INTO `iuran` (`id`, `keterangan`, `tanggal`, `bulan`, `tahun`, `jumlah`, `warga_id`) VALUES
-(1, 'jsai', '12', 7, 2000, 75000, 1),
-(2, 'hgejwbkh', '7', 7, 2000, 100000, 2);
+(1, 'Kas 1', 25, '07', 2022, 70000, 2),
+(2, 'Kas 2', 28, '07', 2022, 100000, 1);
 
 -- --------------------------------------------------------
 
@@ -73,13 +73,13 @@ INSERT INTO `user` (`id`, `username`, `useremail`, `userpassword`) VALUES
 --
 
 CREATE TABLE `warga` (
-  `warga_id` int(11) NOT NULL,
+  `warga_id` int(100) NOT NULL,
   `nik` int(15) NOT NULL,
-  `nama` varchar(35) NOT NULL,
-  `kelamin` varchar(15) NOT NULL,
-  `alamat` varchar(50) NOT NULL,
-  `no_rumah` varchar(100) NOT NULL,
-  `status` varchar(30) NOT NULL
+  `nama` varchar(50) NOT NULL,
+  `kelamin` varchar(35) NOT NULL,
+  `alamat` varchar(250) NOT NULL,
+  `no_rumah` varchar(50) NOT NULL,
+  `status` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -87,8 +87,11 @@ CREATE TABLE `warga` (
 --
 
 INSERT INTO `warga` (`warga_id`, `nik`, `nama`, `kelamin`, `alamat`, `no_rumah`, `status`) VALUES
-(1, 312010911, 'Tiara', 'P', 'Jl.Anggur', '911', ''),
-(2, 312010999, 'jco', 'L', 'Jl.ikan', '990', '');
+(1, 312010999, 'Firdah', 'P', 'Jl.Swadaya', '5', 1),
+(2, 312010222, 'Adi', 'L', 'Jl.Sirsak', '6', 2),
+(4, 312010333, 'Kiki', 'L', 'Jl.Sirsak', '8', 0),
+(5, 312010777, 'Indah', 'P', 'Jl.Swadaya', '4', 0),
+(6, 312010666, 'Rafi', 'L', 'Jl.Swadaya', '9', 0);
 
 --
 -- Indexes for dumped tables
@@ -117,10 +120,22 @@ ALTER TABLE `warga`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `iuran`
+--
+ALTER TABLE `iuran`
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
+--
+-- AUTO_INCREMENT untuk tabel `warga`
+--
+ALTER TABLE `warga`
+  MODIFY `warga_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
