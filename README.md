@@ -1,6 +1,3 @@
-# Jangan lupa ganti database
+# Project Pemogramman Web UAS CI4 APK dan Hosting
 
-
-1. table user di database pake auto_increment PRIMARY KEY 
-
-2. php spark db:seed UserSeeder 
+Apk Web Iuran Kas Warga https://devianafara.site/data_warga
